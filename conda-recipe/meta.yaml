@@ -1,0 +1,33 @@
+package:
+  name: qiime2
+  version: {{ PLUGIN_VERSION }}
+source:
+  path: ..
+build:
+  script: make install
+requirements:
+  host:
+    - python {{ python }}
+    - pip
+    - setuptools
+    - versioningit
+    - wheel
+  run:
+    - python {{ python }}
+    - pip
+    - click {{ click }}
+    - rachis >={{ rachis }}
+  build:
+  - python {{ python }}
+  - setuptools
+  - versioningit
+test:
+  requires:
+    - rachis >={{ rachis }}
+    - pytest
+  imports:
+    - qiime2
+about:
+  home: qiime2.org
+  license: BSD-3-Clause
+  license_family: BSD
