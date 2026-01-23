@@ -13,7 +13,11 @@ test: all
 	pytest
 
 install: all
-	$(PYTHON) -m pip install -v .
+	$(PYTHON) -m pip install -v . && \
+	mkdir -p $(PREFIX)/etc/conda/activate.d && \
+	cp hooks/00_activate_qiime2_envs.sh $(PREFIX)/etc/conda/activate.d/ && \
+	mkdir -p $(PREFIX)/etc/conda/deactivate.d && \
+	cp hooks/00_deactivate_qiime2_envs.sh $(PREFIX)/etc/conda/deactivate.d/
 
 dev: all
 	pip install -e .
