@@ -122,7 +122,8 @@ class QIIME2AliasFinder(importlib.abc.MetaPathFinder):
             origin=target_spec.origin,
             is_package=True,
         )
-        # this spec will then be used by the import machinery to load the loader
+        # This spec is used by the import machinery
+        # to load the custom alias loader.
         return spec
 
 
