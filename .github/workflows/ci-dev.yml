@@ -1,0 +1,29 @@
+name: ci-dev
+
+on:
+  pull_request:
+    branches: ["dev"]
+  push:
+    branches: ["dev"]
+
+jobs:
+  lint:
+    name: "lint"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - run: uv run --only-dev nox -s lint
+
+  tests:
+    name: "tests [${{ matrix.os }}]"
+    needs: [lint]
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-latest", "macos-latest"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: astral-sh/setup-uv@v7
+      - run: uv run --only-dev nox -k "not lint"
