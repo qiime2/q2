@@ -75,3 +75,6 @@ runinfo
 
 # Version file from versioningit
 _version.py
+
+# library so no lock file
+uv.lock
