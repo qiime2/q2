@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: astral-sh/setup-uv@v7
+      - uses: qiime2-cutlery/setup-uv@v7
       - run: uv run --only-dev nox -s lint
 
   tests:
@@ -25,5 +25,5 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
-      - uses: astral-sh/setup-uv@v7
+      - uses: qiime2-cutlery/setup-uv@v7
       - run: uv run --only-dev nox -k "not lint"
