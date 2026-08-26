@@ -12,6 +12,9 @@ dynamic = ["version"]
 Homepage = "https://qiime2.org"
 Repository = "https://github.com/qiime2/q2"
 
+[project.scripts]
+"qiime" = "qiime2.__main__:qiime"
+
 [dependency-groups]
 dev = [
     "nox>=2025.11.12",
@@ -46,6 +49,9 @@ file = "src/qiime2/_version.py"
 
 [tool.setuptools]
 include-package-data = true
+script-files = [
+    "bin/tab-qiime"
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]
