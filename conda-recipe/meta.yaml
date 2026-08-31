@@ -15,7 +15,6 @@ requirements:
   run:
     - python {{ python }}
     - pip
-    - click {{ click }}
     - rachis >={{ rachis }}
   build:
   - python {{ python }}
