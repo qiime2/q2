@@ -14,7 +14,6 @@ requirements:
     - wheel
   run:
     - python {{ python }}
-    - pip
     - rachis >={{ rachis }}
   build:
   - python {{ python }}
