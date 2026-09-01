@@ -1,4 +1,4 @@
-#!/usr/bin/env -S uv run --script
+# !/usr/bin/env -S uv run --script
 
 # /// script
 # dependencies = ["nox>=2025.11.12"]
