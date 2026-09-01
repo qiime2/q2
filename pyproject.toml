@@ -1,7 +1,7 @@
 [project]
 name = "qiime2"
 authors = [
-    { name = "QIIME 2 Developers", email = "developers@qiime2.org" }
+    { name = "QIIME 2 Developers", email = "developers@qiime2.org" } 
 ]
 description = "QIIME 2 Proxy Package"
 readme = {file = "README.md", content-type = "text/markdown"}
