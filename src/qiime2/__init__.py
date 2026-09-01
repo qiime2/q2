@@ -6,13 +6,12 @@
 # The full license is in the file LICENSE, distributed with this software.
 # ----------------------------------------------------------------------------
 
-import sys
 import importlib
 import importlib.abc
 import importlib.util
+import sys
 
 import rachis
-
 
 # The `.` prevents the hook from running on the root, which doesn't
 # help. The root is handled by the __dunders__ below
