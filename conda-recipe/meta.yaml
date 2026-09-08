@@ -5,6 +5,8 @@ source:
   path: ..
 build:
   script: make install
+  entry_points:
+    - qiime=qiime2.__main__:qiime
 requirements:
   host:
     - python {{ python }}
@@ -14,7 +16,9 @@ requirements:
     - wheel
   run:
     - python {{ python }}
+    - click {{ click }}
     - rachis >={{ rachis }}
+    - rachis-cli >={{ rachis_cli }}
   build:
   - python {{ python }}
   - setuptools
