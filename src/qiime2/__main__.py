@@ -7,9 +7,7 @@
 # ----------------------------------------------------------------------------
 
 import click
-
 import rachis_cli.commands
-
 
 ROOT_COMMAND_HELP = """\
 QIIME 2 command-line interface (via rachis-cli)
